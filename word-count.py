@@ -7,6 +7,7 @@ input = sc.textFile("file:///sparkcourse/book.txt")
 words = input.flatMap(lambda x: x.split())
 wordCounts = words.countByValue()
 wordCounts = collections.OrderedDict(sorted(wordCounts.items()))
+print(wordCounts)
 for word, count in wordCounts.items():
     cleanWord = word.encode('ascii', 'ignore')
     if (cleanWord and count != 1):
